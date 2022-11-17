@@ -8,8 +8,8 @@ import requests
 import json
 
 # Provided by Solis Support
-KeyId = "xxxxx"
-secretKey = b'xxxxx'
+KeyId = "13...3"
+secretKey = b'5...4'
 
 VERB="POST"
 now = datetime.now(timezone.utc)
@@ -21,17 +21,19 @@ Date2 = '2022-02-14'
 # Un comment the next block in pairs
 # need matching CanonicalizedResource and Body
 
-#CanonicalizedResource = "/v1/api/userStationList"
-#Body = '{"userId":"xxxxx"}' # userId = id number from the url bar of your inverter detail page
+CanonicalizedResource = "/v1/api/userStationList"
+Body = '{"pageNr":1, pageSize:10}'
+ # userId = id number from the url bar of your inverter detail page
 
-#CanonicalizedResource = "/v1/api/stationDetail"
-#Body = '{"id":"xxxxx"}'  # id = id number from the url bar of your station overview
+# CanonicalizedResource = "/v1/api/stationDetail"
+# Body = '{"id":"1298491919448782265"}' 
+ # id = id number from the url bar of your station overview
 
 #CanonicalizedResource = "/v1/api/inveterList"
-#Body = '{"stationId":"xxxxxx"}'  # id = id number from the url bar of your station overview
+#Body = '{"stationId":"1298491919448782265"}'  # id = id number from the url bar of your station overview
 
-CanonicalizedResource = "/v1/api/inveterDetail"
-Body='{"id":"xxxxx","sn":"xxxxx"}' # userId = id number from the url bar of your inverter detail page; sn = the serial number of your inverter
+# CanonicalizedResource = "/v1/api/inveterDetail"
+# Body='{"id":"1308675217947185260","sn":"1031040221200088"}' # userId = id number from the url bar of your inverter detail page; sn = the serial number of your inverter
 
 #CanonicalizedResource = "/v1/api/stationDayEnergyList"
 #Body = '{"time":"' + Date2 +'"}'
@@ -85,4 +87,5 @@ print ("")
 #print(json.dumps(x.json(),indent=4, sort_keys=True)) # Most Human Readable with alpha sorted keys
 #print(json.dumps(x.json(),indent=4, sort_keys=False)) # Most Human Readable with unsorted keys
 print(json.dumps(x.json(),sort_keys=True)) # Most Compact but still sorted - Probably the best for posting to github.
-#print(x.json()) # Raw JSON - also good for posting to github.
+print(x.json()) # Raw JSON - also good for posting to github.
+print("")

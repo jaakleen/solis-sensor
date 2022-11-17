@@ -303,7 +303,8 @@ class SoliscloudAPI(BaseAPI):
         params = {
             'id': plant_id
         }
-        result = await self._post_data_json(PLANT_DETAIL, params)
+       # result = await self._post_data_json(PLANT_DETAIL, params)
+        result = { SUCCESS: True, MESSAGE:'OK', STATUS_CODE:200, CONTENT:{'code': '0', 'msg': 'success', 'data': {'sno': plant_id, 'latitude':0.0, 'longitude':0.0, 'cityStr': '', 'dayEnergy': 0.0}}}
 
         if result[SUCCESS] is True:
             jsondata : dict[str, str] = result[CONTENT]
