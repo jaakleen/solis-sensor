@@ -62,7 +62,7 @@ Select the right platform and platform URL to use and click "Submit"
 
 **Ginlong platform v2**   Provide username, password and plant id. If you want to add multiple plants just follow the configuration for each plant.
 **Soliscloud**            Provide username, key id, secret and station id. If you want to add multiple stations just follow the configuration for each plant.
-
+In soliscloud_api.py removed the call to PLANT_DETAIL to avoid an inconsistent behaviour of SolisCloud.
 
 # Energy dashboard
 The Solis integration now supports the energy dashboard introduced in Release 2021.8. 
@@ -73,3 +73,4 @@ The Solis integration now supports the energy dashboard introduced in Release 20
 
 # Thanks
 Big thanks & kudo's to [@LucidityCrash](https://github.com/LucidityCrash) for all the work on getting the SolisCloud support working!
+I've forked from https://github.com/hultenvp/solis-sensor to make a work-a-round for the PLANT_DETAIL issue.

@@ -10,6 +10,7 @@ import json
 # Provided by Solis Support
 KeyId = "13...3"
 secretKey = b'5...4'
+url = 'https://www.soliscloud.com:13333'
 
 VERB="POST"
 now = datetime.now(timezone.utc)
@@ -23,17 +24,15 @@ Date2 = '2022-02-14'
 
 CanonicalizedResource = "/v1/api/userStationList"
 Body = '{"pageNr":1, pageSize:10}'
- # userId = id number from the url bar of your inverter detail page
 
-# CanonicalizedResource = "/v1/api/stationDetail"
-# Body = '{"id":"1298491919448782265"}' 
- # id = id number from the url bar of your station overview
+# CanonicalizedResource = "/v1/api/stationDetail" #Doesn't work
+# Body = '{"id":"1...5"}' # 'id' from  the result record from "/v1/api/userStationList"
 
 #CanonicalizedResource = "/v1/api/inveterList"
-#Body = '{"stationId":"1298491919448782265"}'  # id = id number from the url bar of your station overview
+#Body = '{"stationId":"1...5"}'  # 'id' from  the result record from "/v1/api/userStationList"
 
 # CanonicalizedResource = "/v1/api/inveterDetail"
-# Body='{"id":"1308675217947185260","sn":"1031040221200088"}' # userId = id number from the url bar of your inverter detail page; sn = the serial number of your inverter
+# Body='{"id":"1...0","sn":"1...8"}' # 'id', 'sn' from the result record from "/v1/api/inveterList"
 
 #CanonicalizedResource = "/v1/api/stationDayEnergyList"
 #Body = '{"time":"' + Date2 +'"}'
@@ -79,7 +78,6 @@ header = { "Content-MD5":Content_MD5,
 #print (requestStr)
 #print (header)
 
-url = 'https://www.soliscloud.com:13333'
 req = url + CanonicalizedResource
 x = requests.post(req, data=Body, headers=header)
 print ("")
